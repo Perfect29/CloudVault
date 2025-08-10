@@ -1,0 +1,84 @@
+# Development Dockerfile for Spring Boot with hot reload
+FROM openjdk:17-jdk-slim AS development
+
+# Install curl for health checks
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy Maven wrapper and pom.xml
+COPY mvnw .
+COPY .mvn .mvn
+COPY pom.xml .
+
+# Make Maven wrapper executable
+RUN chmod +x ./mvnw
+
+# Download dependencies
+RUN ./mvnw dependency:go-offline -B
+
+# Copy source code
+COPY src ./src
+
+# Create uploads directory
+RUN mkdir -p /app/uploads
+RUN mkdir -p /app/logs
+
+# Expose ports
+EXPOSE 8080 35729
+
+# Development command with Spring Boot DevTools
+CMD ["./mvnw", "spring-boot:run", "-Dspring-boot.run.jvmArguments=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"]
+
+# Production build stage
+FROM openjdk:17-jdk-slim AS builder
+
+WORKDIR /app
+
+# Copy Maven wrapper and pom.xml
+COPY mvnw .
+COPY .mvn .mvn
+COPY pom.xml .
+
+# Make Maven wrapper executable
+RUN chmod +x ./mvnw
+
+# Download dependencies
+RUN ./mvnw dependency:go-offline -B
+
+# Copy source code
+COPY src ./src
+
+# Build the application
+RUN ./mvnw clean package -DskipTests
+
+# Production stage
+FROM openjdk:17-jre-slim AS production
+
+# Install curl for health checks
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy built JAR from builder stage
+COPY --from=builder /app/target/file-storage-0.0.1-SNAPSHOT.jar app.jar
+
+# Create uploads directory
+RUN mkdir -p /app/uploads
+RUN mkdir -p /app/logs
+
+# Create non-root user
+RUN groupadd -r cloudvault && useradd -r -g cloudvault cloudvault
+RUN chown -R cloudvault:cloudvault /app
+USER cloudvault
+
+# Expose port
+EXPOSE 8080
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+  CMD curl -f http://localhost:8080/api/health || exit 1
+
+# Run the application
+CMD ["java", "-jar", "app.jar"]

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.cloudvault.filestorage.controller.AuthControllerTest" time="1.002" tests="5" errors="0" skipped="0" failures="3">
+  <properties>
+    <property name="java.specification.version" value="22"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/arsen/Desktop/PetPro/CloudVault/backend/target/test-classes:/Users/arsen/Desktop/PetPro/CloudVault/backend/target/classes:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.1/spring-boot-starter-data-jpa-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.1/spring-boot-starter-aop-3.2.1.jar:/Users/arsen/.m2/repository/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.1/spring-boot-starter-jdbc-3.2.1.jar:/Users/arsen/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/Users/arsen/.m2/repository/org/springframework/spring-jdbc/6.1.2/spring-jdbc-6.1.2.jar:/Users/arsen/.m2/repository/org/hibernate/orm/hibernate-core/6.4.1.Final/hibernate-core-6.4.1.Final.jar:/Users/arsen/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/arsen/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/arsen/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/Users/arsen/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/Users/arsen/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/Users/arsen/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/Users/arsen/.m2/repository/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.jar:/Users/arsen/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.jar:/Users/arsen/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.jar:/Users/arsen/.m2/repository/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1.jar:/Users/arsen/.m2/repository/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.jar:/Users/arsen/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/arsen/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/arsen/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/Users/arsen/.m2/repository/org/springframework/data/spring-data-jpa/3.2.1/spring-data-jpa-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/data/spring-data-commons/3.2.1/spring-data-commons-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/spring-orm/6.1.2/spring-orm-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/spring-context/6.1.2/spring-context-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/spring-tx/6.1.2/spring-tx-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/spring-beans/6.1.2/spring-beans-6.1.2.jar:/Users/arsen/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/arsen/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/Users/arsen/.m2/repository/org/springframework/spring-aspects/6.1.2/spring-aspects-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.2.1/spring-boot-starter-security-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.1/spring-boot-starter-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot/3.2.1/spring-boot-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.1/spring-boot-autoconfigure-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.1/spring-boot-starter-logging-3.2.1.jar:/Users/arsen/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/Users/arsen/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/Users/arsen/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/Users/arsen/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/arsen/.m2/repository/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar:/Users/arsen/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/arsen/.m2/repository/org/springframework/spring-aop/6.1.2/spring-aop-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/security/spring-security-config/6.2.1/spring-security-config-6.2.1.jar:/Users/arsen/.m2/repository/org/springframework/security/spring-security-web/6.2.1/spring-security-web-6.2.1.jar:/Users/arsen/.m2/repository/org/springframework/spring-expression/6.1.2/spring-expression-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.1/spring-boot-starter-web-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.1/spring-boot-starter-json-3.2.1.jar:/Users/arsen/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar:/Users/arsen/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar:/Users/arsen/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.1/spring-boot-starter-tomcat-3.2.1.jar:/Users/arsen/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.17/tomcat-embed-core-10.1.17.jar:/Users/arsen/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.17/tomcat-embed-websocket-10.1.17.jar:/Users/arsen/.m2/repository/org/springframework/spring-web/6.1.2/spring-web-6.1.2.jar:/Users/arsen/.m2/repository/io/micrometer/micrometer-observation/1.12.1/micrometer-observation-1.12.1.jar:/Users/arsen/.m2/repository/io/micrometer/micrometer-commons/1.12.1/micrometer-commons-1.12.1.jar:/Users/arsen/.m2/repository/org/springframework/spring-webmvc/6.1.2/spring-webmvc-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.2.1/spring-boot-starter-validation-3.2.1.jar:/Users/arsen/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.17/tomcat-embed-el-10.1.17.jar:/Users/arsen/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/Users/arsen/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/arsen/.m2/repository/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar:/Users/arsen/.m2/repository/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.jar:/Users/arsen/.m2/repository/io/jsonwebtoken/jjwt-api/0.11.5/jjwt-api-0.11.5.jar:/Users/arsen/.m2/repository/io/jsonwebtoken/jjwt-impl/0.11.5/jjwt-impl-0.11.5.jar:/Users/arsen/.m2/repository/io/jsonwebtoken/jjwt-jackson/0.11.5/jjwt-jackson-0.11.5.jar:/Users/arsen/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar:/Users/arsen/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar:/Users/arsen/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/s3/2.21.29/s3-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/aws-xml-protocol/2.21.29/aws-xml-protocol-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/aws-query-protocol/2.21.29/aws-query-protocol-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/protocol-core/2.21.29/protocol-core-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/arns/2.21.29/arns-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/profiles/2.21.29/profiles-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/crt-core/2.21.29/crt-core-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/http-auth/2.21.29/http-auth-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/identity-spi/2.21.29/identity-spi-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/http-auth-spi/2.21.29/http-auth-spi-2.21.29.jar:/Users/arsen/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/http-auth-aws/2.21.29/http-auth-aws-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/checksums-spi/2.21.29/checksums-spi-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/checksums/2.21.29/checksums-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/sdk-core/2.21.29/sdk-core-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/auth/2.21.29/auth-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/eventstream/eventstream/1.0.1/eventstream-1.0.1.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/http-client-spi/2.21.29/http-client-spi-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/regions/2.21.29/regions-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/annotations/2.21.29/annotations-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/utils/2.21.29/utils-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/aws-core/2.21.29/aws-core-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/metrics-spi/2.21.29/metrics-spi-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/json-utils/2.21.29/json-utils-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/third-party-jackson-core/2.21.29/third-party-jackson-core-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/endpoints-spi/2.21.29/endpoints-spi-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/apache-client/2.21.29/apache-client-2.21.29.jar:/Users/arsen/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/arsen/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/arsen/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/Users/arsen/.m2/repository/commons-codec/commons-codec/1.16.0/commons-codec-1.16.0.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/netty-nio-client/2.21.29/netty-nio-client-2.21.29.jar:/Users/arsen/.m2/repository/io/netty/netty-codec-http/4.1.104.Final/netty-codec-http-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-codec-http2/4.1.104.Final/netty-codec-http2-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-codec/4.1.104.Final/netty-codec-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-transport/4.1.104.Final/netty-transport-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-common/4.1.104.Final/netty-common-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-buffer/4.1.104.Final/netty-buffer-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-handler/4.1.104.Final/netty-handler-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.104.Final/netty-transport-native-unix-common-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.104.Final/netty-transport-classes-epoll-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-resolver/4.1.104.Final/netty-resolver-4.1.104.Final.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.1/spring-boot-starter-test-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-test/3.2.1/spring-boot-test-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.1/spring-boot-test-autoconfigure-3.2.1.jar:/Users/arsen/.m2/repository/com/jayway/jsonpath/json-path/2.8.0/json-path-2.8.0.jar:/Users/arsen/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar:/Users/arsen/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/Users/arsen/.m2/repository/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar:/Users/arsen/.m2/repository/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar:/Users/arsen/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar:/Users/arsen/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/arsen/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/Users/arsen/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/arsen/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/arsen/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/arsen/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/arsen/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/arsen/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/Users/arsen/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.jar:/Users/arsen/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/arsen/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/Users/arsen/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/arsen/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/arsen/.m2/repository/org/springframework/spring-core/6.1.2/spring-core-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/spring-jcl/6.1.2/spring-jcl-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/spring-test/6.1.2/spring-test-6.1.2.jar:/Users/arsen/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/Users/arsen/.m2/repository/org/springframework/security/spring-security-test/6.2.1/spring-security-test-6.2.1.jar:/Users/arsen/.m2/repository/org/springframework/security/spring-security-core/6.2.1/spring-security-core-6.2.1.jar:/Users/arsen/.m2/repository/org/springframework/security/spring-security-crypto/6.2.1/spring-security-crypto-6.2.1.jar:/Users/arsen/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/arsen/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar:/Users/arsen/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/arsen/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/arsen/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/arsen/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/arsen/.m2/repository/org/testcontainers/junit-jupiter/1.19.3/junit-jupiter-1.19.3.jar:/Users/arsen/.m2/repository/org/testcontainers/testcontainers/1.19.3/testcontainers-1.19.3.jar:/Users/arsen/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/arsen/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar:/Users/arsen/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/Users/arsen/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/Users/arsen/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/Users/arsen/.m2/repository/com/github/docker-java/docker-java-api/3.3.4/docker-java-api-3.3.4.jar:/Users/arsen/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.4/docker-java-transport-zerodep-3.3.4.jar:/Users/arsen/.m2/repository/com/github/docker-java/docker-java-transport/3.3.4/docker-java-transport-3.3.4.jar:/Users/arsen/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/arsen/.m2/repository/org/testcontainers/postgresql/1.19.3/postgresql-1.19.3.jar:/Users/arsen/.m2/repository/org/testcontainers/jdbc/1.19.3/jdbc-1.19.3.jar:/Users/arsen/.m2/repository/org/testcontainers/database-commons/1.19.3/database-commons-1.19.3.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Almaty"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="22"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="KZ"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/arsen/Desktop/PetPro/CloudVault/backend/target/surefire/surefirebooter-20250809204848178_3.jar /Users/arsen/Desktop/PetPro/CloudVault/backend/target/surefire 2025-08-09T20-48-48_073-jvmRun1 surefire-20250809204848178_1tmp surefire_0-20250809204848178_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/arsen/Desktop/PetPro/CloudVault/backend/target/test-classes:/Users/arsen/Desktop/PetPro/CloudVault/backend/target/classes:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.1/spring-boot-starter-data-jpa-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.1/spring-boot-starter-aop-3.2.1.jar:/Users/arsen/.m2/repository/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.1/spring-boot-starter-jdbc-3.2.1.jar:/Users/arsen/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/Users/arsen/.m2/repository/org/springframework/spring-jdbc/6.1.2/spring-jdbc-6.1.2.jar:/Users/arsen/.m2/repository/org/hibernate/orm/hibernate-core/6.4.1.Final/hibernate-core-6.4.1.Final.jar:/Users/arsen/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/arsen/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/arsen/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/Users/arsen/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/Users/arsen/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/Users/arsen/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/Users/arsen/.m2/repository/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.jar:/Users/arsen/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.jar:/Users/arsen/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.jar:/Users/arsen/.m2/repository/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1.jar:/Users/arsen/.m2/repository/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.jar:/Users/arsen/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/arsen/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/arsen/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/Users/arsen/.m2/repository/org/springframework/data/spring-data-jpa/3.2.1/spring-data-jpa-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/data/spring-data-commons/3.2.1/spring-data-commons-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/spring-orm/6.1.2/spring-orm-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/spring-context/6.1.2/spring-context-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/spring-tx/6.1.2/spring-tx-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/spring-beans/6.1.2/spring-beans-6.1.2.jar:/Users/arsen/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/arsen/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/Users/arsen/.m2/repository/org/springframework/spring-aspects/6.1.2/spring-aspects-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.2.1/spring-boot-starter-security-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.1/spring-boot-starter-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot/3.2.1/spring-boot-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.1/spring-boot-autoconfigure-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.1/spring-boot-starter-logging-3.2.1.jar:/Users/arsen/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/Users/arsen/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/Users/arsen/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/Users/arsen/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/arsen/.m2/repository/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar:/Users/arsen/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/arsen/.m2/repository/org/springframework/spring-aop/6.1.2/spring-aop-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/security/spring-security-config/6.2.1/spring-security-config-6.2.1.jar:/Users/arsen/.m2/repository/org/springframework/security/spring-security-web/6.2.1/spring-security-web-6.2.1.jar:/Users/arsen/.m2/repository/org/springframework/spring-expression/6.1.2/spring-expression-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.1/spring-boot-starter-web-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.1/spring-boot-starter-json-3.2.1.jar:/Users/arsen/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar:/Users/arsen/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar:/Users/arsen/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.1/spring-boot-starter-tomcat-3.2.1.jar:/Users/arsen/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.17/tomcat-embed-core-10.1.17.jar:/Users/arsen/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.17/tomcat-embed-websocket-10.1.17.jar:/Users/arsen/.m2/repository/org/springframework/spring-web/6.1.2/spring-web-6.1.2.jar:/Users/arsen/.m2/repository/io/micrometer/micrometer-observation/1.12.1/micrometer-observation-1.12.1.jar:/Users/arsen/.m2/repository/io/micrometer/micrometer-commons/1.12.1/micrometer-commons-1.12.1.jar:/Users/arsen/.m2/repository/org/springframework/spring-webmvc/6.1.2/spring-webmvc-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.2.1/spring-boot-starter-validation-3.2.1.jar:/Users/arsen/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.17/tomcat-embed-el-10.1.17.jar:/Users/arsen/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/Users/arsen/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/arsen/.m2/repository/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar:/Users/arsen/.m2/repository/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.jar:/Users/arsen/.m2/repository/io/jsonwebtoken/jjwt-api/0.11.5/jjwt-api-0.11.5.jar:/Users/arsen/.m2/repository/io/jsonwebtoken/jjwt-impl/0.11.5/jjwt-impl-0.11.5.jar:/Users/arsen/.m2/repository/io/jsonwebtoken/jjwt-jackson/0.11.5/jjwt-jackson-0.11.5.jar:/Users/arsen/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar:/Users/arsen/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar:/Users/arsen/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/s3/2.21.29/s3-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/aws-xml-protocol/2.21.29/aws-xml-protocol-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/aws-query-protocol/2.21.29/aws-query-protocol-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/protocol-core/2.21.29/protocol-core-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/arns/2.21.29/arns-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/profiles/2.21.29/profiles-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/crt-core/2.21.29/crt-core-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/http-auth/2.21.29/http-auth-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/identity-spi/2.21.29/identity-spi-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/http-auth-spi/2.21.29/http-auth-spi-2.21.29.jar:/Users/arsen/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/http-auth-aws/2.21.29/http-auth-aws-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/checksums-spi/2.21.29/checksums-spi-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/checksums/2.21.29/checksums-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/sdk-core/2.21.29/sdk-core-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/auth/2.21.29/auth-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/eventstream/eventstream/1.0.1/eventstream-1.0.1.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/http-client-spi/2.21.29/http-client-spi-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/regions/2.21.29/regions-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/annotations/2.21.29/annotations-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/utils/2.21.29/utils-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/aws-core/2.21.29/aws-core-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/metrics-spi/2.21.29/metrics-spi-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/json-utils/2.21.29/json-utils-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/third-party-jackson-core/2.21.29/third-party-jackson-core-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/endpoints-spi/2.21.29/endpoints-spi-2.21.29.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/apache-client/2.21.29/apache-client-2.21.29.jar:/Users/arsen/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/arsen/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/arsen/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/Users/arsen/.m2/repository/commons-codec/commons-codec/1.16.0/commons-codec-1.16.0.jar:/Users/arsen/.m2/repository/software/amazon/awssdk/netty-nio-client/2.21.29/netty-nio-client-2.21.29.jar:/Users/arsen/.m2/repository/io/netty/netty-codec-http/4.1.104.Final/netty-codec-http-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-codec-http2/4.1.104.Final/netty-codec-http2-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-codec/4.1.104.Final/netty-codec-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-transport/4.1.104.Final/netty-transport-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-common/4.1.104.Final/netty-common-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-buffer/4.1.104.Final/netty-buffer-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-handler/4.1.104.Final/netty-handler-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.104.Final/netty-transport-native-unix-common-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.104.Final/netty-transport-classes-epoll-4.1.104.Final.jar:/Users/arsen/.m2/repository/io/netty/netty-resolver/4.1.104.Final/netty-resolver-4.1.104.Final.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.1/spring-boot-starter-test-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-test/3.2.1/spring-boot-test-3.2.1.jar:/Users/arsen/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.1/spring-boot-test-autoconfigure-3.2.1.jar:/Users/arsen/.m2/repository/com/jayway/jsonpath/json-path/2.8.0/json-path-2.8.0.jar:/Users/arsen/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar:/Users/arsen/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/Users/arsen/.m2/repository/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar:/Users/arsen/.m2/repository/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar:/Users/arsen/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar:/Users/arsen/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/arsen/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/Users/arsen/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/arsen/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/arsen/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/arsen/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/arsen/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/arsen/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/Users/arsen/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.jar:/Users/arsen/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/arsen/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/Users/arsen/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/arsen/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/arsen/.m2/repository/org/springframework/spring-core/6.1.2/spring-core-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/spring-jcl/6.1.2/spring-jcl-6.1.2.jar:/Users/arsen/.m2/repository/org/springframework/spring-test/6.1.2/spring-test-6.1.2.jar:/Users/arsen/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/Users/arsen/.m2/repository/org/springframework/security/spring-security-test/6.2.1/spring-security-test-6.2.1.jar:/Users/arsen/.m2/repository/org/springframework/security/spring-security-core/6.2.1/spring-security-core-6.2.1.jar:/Users/arsen/.m2/repository/org/springframework/security/spring-security-crypto/6.2.1/spring-security-crypto-6.2.1.jar:/Users/arsen/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/arsen/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar:/Users/arsen/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/arsen/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/arsen/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/arsen/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/arsen/.m2/repository/org/testcontainers/junit-jupiter/1.19.3/junit-jupiter-1.19.3.jar:/Users/arsen/.m2/repository/org/testcontainers/testcontainers/1.19.3/testcontainers-1.19.3.jar:/Users/arsen/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/arsen/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar:/Users/arsen/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/Users/arsen/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/Users/arsen/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/Users/arsen/.m2/repository/com/github/docker-java/docker-java-api/3.3.4/docker-java-api-3.3.4.jar:/Users/arsen/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.4/docker-java-transport-zerodep-3.3.4.jar:/Users/arsen/.m2/repository/com/github/docker-java/docker-java-transport/3.3.4/docker-java-transport-3.3.4.jar:/Users/arsen/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/arsen/.m2/repository/org/testcontainers/postgresql/1.19.3/postgresql-1.19.3.jar:/Users/arsen/.m2/repository/org/testcontainers/jdbc/1.19.3/jdbc-1.19.3.jar:/Users/arsen/.m2/repository/org/testcontainers/database-commons/1.19.3/database-commons-1.19.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/arsen"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home"/>
+    <property name="spring.profiles.active" value="test"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/arsen/Desktop/PetPro/CloudVault/backend"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/arsen/Desktop/PetPro/CloudVault/backend/target/surefire/surefirebooter-20250809204848178_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="22.0.2+9-70"/>
+    <property name="user.name" value="arsen"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.5"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="FILE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="skipTests" value="false"/>
+    <property name="localRepository" value="/Users/arsen/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/7f/4zlf9s5s0nbfkd_rv_ngbxbc0000gn/T/"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="22.0.2"/>
+    <property name="user.dir" value="/Users/arsen/Desktop/PetPro/CloudVault/backend"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="62491"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/arsen/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="22.0.2+9-70"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="66.0"/>
+    <property name="CONSOLE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} - %msg%n"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[cloudvault-file-storage] "/>
+  </properties>
+  <testcase name="getCurrentUser_Unauthorized" classname="com.cloudvault.filestorage.controller.AuthControllerTest" time="0.039">
+    <system-out><![CDATA[2025-08-09 20:48:51 - Could not detect default configuration classes for test class [com.cloudvault.filestorage.controller.AuthControllerTest]: AuthControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-08-09 20:48:51 - Found @SpringBootConfiguration com.cloudvault.filestorage.CloudVaultApplication for test class com.cloudvault.filestorage.controller.AuthControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+&amp#27;[32m :: Spring Boot :: &amp#27;[39m              &amp#27;[2m (v3.2.1)&amp#27;[0;39m
+
+2025-08-09 20:48:51 - Starting AuthControllerTest using Java 22.0.2 with PID 62491 (started by arsen in /Users/arsen/Desktop/PetPro/CloudVault/backend)
+2025-08-09 20:48:51 - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-08-09 20:48:51 - The following 1 profile is active: "test"
+2025-08-09 20:48:51 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7499553f
+2025-08-09 20:48:52 - 5 mappings in 'requestMappingHandlerMapping'
+2025-08-09 20:48:52 - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-09 20:48:52 - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 20:48:52 - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 20:48:52 - 
+
+Using generated security password: 9f14f79e-bbea-4082-ab2d-d22a1abb524a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-08-09 20:48:52 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@716661b3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e93e779, org.springframework.security.web.context.SecurityContextHolderFilter@189faf12, org.springframework.security.web.header.HeaderWriterFilter@51077e04, org.springframework.web.filter.CorsFilter@413195dc, org.springframework.security.web.csrf.CsrfFilter@4054e55b, org.springframework.security.web.authentication.logout.LogoutFilter@4cf52777, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@41e67819, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3382adc2, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@230ac978, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@49f5758f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f06ef67, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@599f0fab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@61a35f53, org.springframework.security.web.access.ExceptionTranslationFilter@6338a0ec, org.springframework.security.web.access.intercept.AuthorizationFilter@685d92cf]
+2025-08-09 20:48:52 - Initializing Spring TestDispatcherServlet ''
+2025-08-09 20:48:52 - Initializing Servlet ''
+2025-08-09 20:48:52 - Completed initialization in 0 ms
+2025-08-09 20:48:52 - Started AuthControllerTest in 0.794 seconds (process running for 4.415)
+2025-08-09 20:48:52 - Securing GET /auth/me
+2025-08-09 20:48:52 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-09 20:48:52 - Saved request http://localhost/auth/me?continue to session
+2025-08-09 20:48:52 - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@6e0b851e, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2025-08-09 20:48:52 - Trying to match using Or [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest], And [Not [MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@6e0b851e, matchingMediaTypes=[text/html], useEquals=false, ignoredMediaTypes=[]]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@6e0b851e, matchingMediaTypes=[application/atom+xml, application/x-www-form-urlencoded, application/json, application/octet-stream, application/xml, multipart/form-data, text/xml], useEquals=false, ignoredMediaTypes=[*/*]]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@6e0b851e, matchingMediaTypes=[*/*], useEquals=true, ignoredMediaTypes=[]]]
+2025-08-09 20:48:52 - Match found! Executing org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint@43549693
+2025-08-09 20:48:52 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2025-08-09 20:48:52 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@71a25687
+]]></system-out>
+    <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/Users/arsen/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+  <testcase name="signin_Success" classname="com.cloudvault.filestorage.controller.AuthControllerTest" time="0.07">
+    <failure message="Status expected:&lt;200&gt; but was:&lt;403&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Status expected:<200> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.cloudvault.filestorage.controller.AuthControllerTest.signin_Success(AuthControllerTest.java:71)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+    <system-out><![CDATA[2025-08-09 20:48:52 - Securing POST /auth/signin
+2025-08-09 20:48:52 - Invalid CSRF token found for http://localhost/auth/signin
+2025-08-09 20:48:52 - Responding with 403 status code
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /auth/signin
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"45"]
+             Body = {"username":"testuser","password":"password"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@23c424c6}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+  <testcase name="getCurrentUser_Success" classname="com.cloudvault.filestorage.controller.AuthControllerTest" time="0.041">
+    <system-out><![CDATA[2025-08-09 20:48:52 - Created HttpSession as SecurityContext is non-default
+2025-08-09 20:48:52 - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@48d2a802]
+2025-08-09 20:48:52 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-08-09 20:48:52 - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.cloudvault.filestorage.security.UserPrincipal@70c1a887, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[]]] to HttpSession [org.springframework.mock.web.MockHttpSession@48d2a802]
+2025-08-09 20:48:52 - Securing GET /auth/me
+2025-08-09 20:48:52 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.cloudvault.filestorage.security.UserPrincipal@70c1a887, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[]]]
+2025-08-09 20:48:52 - Secured GET /auth/me
+2025-08-09 20:48:52 - Mapped to com.cloudvault.filestorage.controller.AuthController#getCurrentUser(Authentication)
+2025-08-09 20:48:52 - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-08-09 20:48:52 - Writing [{id=user-123, email=test@example.com, username=testuser}]
+]]></system-out>
+  </testcase>
+  <testcase name="signup_InvalidData_BadRequest" classname="com.cloudvault.filestorage.controller.AuthControllerTest" time="0.004">
+    <failure message="Status expected:&lt;400&gt; but was:&lt;403&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Status expected:<400> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.cloudvault.filestorage.controller.AuthControllerTest.signup_InvalidData_BadRequest(AuthControllerTest.java:107)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+    <system-out><![CDATA[2025-08-09 20:48:52 - Securing POST /auth/signup
+2025-08-09 20:48:52 - Invalid CSRF token found for http://localhost/auth/signup
+2025-08-09 20:48:52 - Responding with 403 status code
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /auth/signup
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"56"]
+             Body = {"username":"","email":"invalid-email","password":"123"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@4de20c29}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+  <testcase name="signup_Success" classname="com.cloudvault.filestorage.controller.AuthControllerTest" time="0.003">
+    <failure message="Status expected:&lt;200&gt; but was:&lt;403&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Status expected:<200> but was:<403>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.cloudvault.filestorage.controller.AuthControllerTest.signup_Success(AuthControllerTest.java:91)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+    <system-out><![CDATA[2025-08-09 20:48:52 - Securing POST /auth/signup
+2025-08-09 20:48:52 - Invalid CSRF token found for http://localhost/auth/signup
+2025-08-09 20:48:52 - Responding with 403 status code
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /auth/signup
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"70"]
+             Body = {"username":"newuser","email":"new@example.com","password":"password"}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@2faaec43}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+</testsuite>
